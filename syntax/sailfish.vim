@@ -10,6 +10,7 @@ endif
 syntax keyword sailfishKeyword fun dec exp
 syntax keyword sailfishKeyword return start
 syntax keyword sailfishKeyword import over new
+syntax keyword sailfishKeyword Cat Cfn
 
 " define conditionals
 syntax keyword sailfishConditional if else
