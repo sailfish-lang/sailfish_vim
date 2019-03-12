@@ -36,6 +36,7 @@ syntax match sailfishOperation "\v\<"
 syntax match sailfishOperation "\v\>"
 syntax keyword sailfishOperation and
 syntax keyword sailfishOperation or
+syntax keyword sailfishOperation display_str display_int display_flt display_bool
 
 " define numbers
 syntax match sailfishNumber "\v[0-9]*"
