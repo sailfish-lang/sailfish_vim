@@ -16,7 +16,7 @@ syntax keyword sailfishKeyword Cat Cfn
 syntax keyword sailfishConditional if else
 
 " define the built-in function keywords
-syntax keyword sailfishFunction display
+syntax keyword sailfishFunction display_str display_int display_flt display_bool
 
 " define types
 syntax keyword sailfishType int str flt bool void
@@ -36,7 +36,6 @@ syntax match sailfishOperation "\v\<"
 syntax match sailfishOperation "\v\>"
 syntax keyword sailfishOperation and
 syntax keyword sailfishOperation or
-syntax keyword sailfishOperation display_str display_int display_flt display_bool
 
 " define numbers
 syntax match sailfishNumber "\v[0-9]*"
