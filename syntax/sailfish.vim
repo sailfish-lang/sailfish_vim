@@ -1,39 +1,34 @@
 " Language:     Sailfish
 " Maintainer:   Rob Durst <me@robdurst.com>
-" Last Change:  Mar 5, 2019
+" Last Change:  April 29, 2019
 
 if exists("b:current_syntax")
     finish
 endif
 
 " define all the keywords
-syntax keyword sailfishKeyword fun dec exp
+syntax keyword sailfishKeyword fun dec
 syntax keyword sailfishKeyword return start
-syntax keyword sailfishKeyword import over new
-syntax keyword sailfishKeyword Cat Cfn
+syntax keyword sailfishKeyword import new
+syntax keyword sailfishKeyword Uat Ufn
 
 " define conditionals
-syntax keyword sailfishConditional if else
+syntax keyword sailfishConditional Tree
 
 " define the built-in function keywords
-syntax keyword sailfishFunction display_str display_int display_flt display_bool
+syntax keyword sailfishFunction deleteAtIndexStr deleteAtIndexInt deleteAtIndexFlt deleteAtIndexBool
+syntax keyword sailfishFunction getAtIndexStr getAtIndexInt getAtIndexFlt getAtIndexBool
+syntax keyword sailfishFunction setAtIndexStr setAtIndexInt setAtIndexFlt setAtIndexBool
+syntax keyword sailfishFunction appendListStr appendListInt appendListFlt appendListBool
+syntax keyword sailfishFunction printStr printInt printFlt printBool
 
-" define types
+" define primitives types
 syntax keyword sailfishType int str flt bool void
 
-" define operations
-syntax match sailfishOperation "\v\*"
-syntax match sailfishOperation "\v/"
-syntax match sailfishOperation "\v\+"
-syntax match sailfishOperation "\v\-"
-syntax match sailfishOperation "\v\%"
-syntax match sailfishOperation "\v\*\*"
-syntax match sailfishOperation "\v\=\="
-syntax match sailfishOperation "\v\<\="
-syntax match sailfishOperation "\v\>\="
-syntax match sailfishOperation "\v\="
-syntax match sailfishOperation "\v\<"
-syntax match sailfishOperation "\v\>"
+" define primitive list types
+syntax keyword sailfishType [int] [str] [flt] [bool]
+
+" define -- a small subset :( of -- operations
 syntax keyword sailfishOperation and
 syntax keyword sailfishOperation or
 
@@ -49,6 +44,9 @@ syntax keyword sailfishBoolean true false
 " define strings
 syntax region sailfishString start=/\v"/ skip=/\v\\./ end=/\v"/
 
+" define comments
+syntax match sailfishComment "\v#.*$"
+
 " link stuff to external syntax highlighting, allowing third party
 " devs/authors to create their own schemes
 highlight link sailfishKeyword Keyword
@@ -60,5 +58,6 @@ highlight link sailfishNumber Number
 highlight link sailfishFloat Float
 highlight link sailfishBoolean Boolean
 highlight link sailfishString String
+highlight link sailfishComment Comment
 
 let b:current_syntax = "sailfish"
